@@ -18,7 +18,8 @@ body {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -165,12 +166,15 @@ label span {
   font-size: 13px;
 }
 
-input {
+input,
+select {
   width: 100%;
   min-height: 42px;
   border-radius: 7px;
   border: 1px solid var(--border);
   padding: 0 12px;
+  background: #ffffff;
+  color: #172033;
 }
 
 .records {
@@ -208,10 +212,210 @@ input {
   line-height: 1.6;
 }
 
+/* 加装验收 */
+.sub-title {
+  margin: 22px 0 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 16px;
+}
+
+.tank-scroll {
+  overflow-x: auto;
+}
+
+.tank-table {
+  width: 100%;
+  min-width: 960px;
+  border-collapse: collapse;
+}
+
+.tank-table th,
+.tank-table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.tank-table th {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.tank-table input {
+  min-height: 36px;
+  min-width: 96px;
+}
+
+.row-error input {
+  border-color: #fca5a5;
+}
+
+.overflow {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.row-del {
+  min-height: 32px;
+  padding: 0 10px;
+}
+
+.add-row {
+  margin-top: 10px;
+  padding: 0 14px;
+}
+
+.check-panel {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.check-panel > div {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.check-panel small {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+}
+
+.check-panel strong {
+  font-size: 20px;
+}
+
+.danger-text {
+  color: #dc2626;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-pending {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fdba74;
+}
+
+.badge-ready {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #93c5fd;
+}
+
+.badge-signed {
+  background: #f0fdfa;
+  color: var(--primary);
+  border: 1px solid #5eead4;
+}
+
+.warn-line {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border: 1px solid #fdba74;
+  border-radius: 7px;
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.error-list {
+  margin: 14px 0 0;
+  padding: 10px 12px 10px 30px;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  background: #fef2f2;
+  color: #b91c1c;
+  line-height: 1.7;
+}
+
+.hint {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.form-actions button {
+  padding: 0 16px;
+}
+
+.bunker-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.bunker-card header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.bunker-card h3 {
+  margin: 0 0 4px;
+}
+
+.bunker-card p {
+  margin: 0;
+  color: #526071;
+  line-height: 1.6;
+}
+
+.bunker-card .warn-line {
+  margin: 0;
+}
+
+.sign-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.sign-row button {
+  padding: 0 16px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.danger-btn {
+  color: #b91c1c;
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
 @media (max-width: 860px) {
   .metrics,
   .workspace,
-  .field-grid {
+  .field-grid,
+  .check-panel,
+  .sign-row {
     grid-template-columns: 1fr;
   }
 

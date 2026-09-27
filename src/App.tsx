@@ -1,4 +1,7 @@
 import "./styles.css";
+import BunkerAcceptance from "./bunker/BunkerAcceptance";
+import HandoverSummary from "./bunker/HandoverSummary";
+import { useBunkerRecords } from "./bunker/useBunkerRecords";
 
 const project = {
   "sourceNo": 1,
@@ -55,6 +58,8 @@ const project = {
 };
 
 function App() {
+  const bunker = useBunkerRecords();
+
   return (
     <main className="app">
       <section className="hero">
@@ -100,6 +105,15 @@ function App() {
           </div>
         </section>
       </section>
+
+      <BunkerAcceptance
+        records={bunker.records}
+        addRecord={bunker.addRecord}
+        updateRecord={bunker.updateRecord}
+        removeRecord={bunker.removeRecord}
+      />
+
+      <HandoverSummary records={bunker.records} />
 
       <section className="panel">
         <div className="heading">
